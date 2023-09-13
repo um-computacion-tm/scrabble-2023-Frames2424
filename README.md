@@ -1,4 +1,5 @@
 scrabble-2023-Frames2424
+AUTOR: FRANCO MARTÍNEZ
 
 # CircleCi Badge
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/um-computacion-tm/scrabble-2023-Frames2424/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/um-computacion-tm/scrabble-2023-Frames2424/tree/main)
