@@ -1,7 +1,6 @@
 import unittest
 from game.board import Board
 
-
 class TestBoard(unittest.TestCase):
     def test_init(self):
         tablero = Board()
@@ -149,10 +148,6 @@ class TestBoard(unittest.TestCase):
     ['*','1','*','*','*','5','*','*','*','5','*','*','*','1','*'],
     ['0','*','*','4','*','*','*','0','*','*','*','4','*','*','0'],
 ])
-        
-
-
-
 
 if __name__ == '__main__':
     unittest.main()
