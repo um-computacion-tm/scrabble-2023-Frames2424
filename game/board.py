@@ -92,5 +92,3 @@ class Board:
                 return True
             else:
                 continue
-
-# branch

@@ -39,5 +39,3 @@ class BagTiles:
                      'Z': 10,
                      'CO': 0
         }
-# branch
-        
