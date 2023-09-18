@@ -1,6 +1,7 @@
 import unittest
 from game.board import Board
 
+
 class TestBoard(unittest.TestCase):
     def test_init(self):
         tablero = Board()
@@ -30,7 +31,7 @@ class TestBoard(unittest.TestCase):
     def testTableroConPalabrasGrafico(self):
         tablero = Board()
         tablero.initialBoard()
-        tablero.writeVerticalWord(0, 0, 'ARASAKA')
+        tablero.writeInBoard(0, 0, 'V', 'ARASAKA')
         self.assertEqual((tablero.board),[
     ['A','*','*','4','*','*','*','0','*','*','*','4','*','*','0'],
     ['R','1','*','*','*','5','*','*','*','5','*','*','*','1','*'],
@@ -52,31 +53,31 @@ class TestBoard(unittest.TestCase):
     def testValidarEnVertical(self):
         tablero = Board()
         tablero.initialBoard()
-        tablero.writeVerticalWord(0, 2, 'ARASAKA')
+        tablero.writeInBoard(0, 2, 'V','ARASAKA')
         self.assertEqual((tablero.verifyVerticalWord('ARASAKA')), True)
 
     def testValidarEnVerticalFalso(self):
         tablero = Board()
         tablero.initialBoard()
-        tablero.writeVerticalWord(0, 2, 'ARASAKA')
+        tablero.writeInBoard(0, 2, 'H','ARASAKA')
         self.assertEqual((tablero.verifyVerticalWord('CASA')), None)
 
     def testValidarEnHorizontal(self):
         tablero = Board()
         tablero.initialBoard()
-        tablero.writeHorizontalWord(0, 2, 'ARASAKA')
+        tablero.writeInBoard(0, 2, 'H', 'ARASAKA')
         self.assertEqual((tablero.verifyHorizontalWord('ARASAKA')), True)
 
     def testValidarEnHorizontalFalso(self):
         tablero = Board()
         tablero.initialBoard()
-        tablero.writeHorizontalWord(0, 2, 'ARASAKA')
+        tablero.writeInBoard(0, 2, 'H','ARASAKA')
         self.assertEqual((tablero.verifyHorizontalWord('AROSAKO')), None)
 
     def testListaDePuntaje_I(self):
         tablero = Board()
         tablero.initialBoard()
-        tablero.writeHorizontalWord(0, 2, 'ARASAKA')
+        tablero.writeInBoard(0, 2, 'H', 'ARASAKA')
         self.assertEqual((tablero.board),[
     ['0','*','A','R','A','S','A','K','A','*','*','4','*','*','0'],
     ['*','1','*','*','*','5','*','*','*','5','*','*','*','1','*'],
@@ -99,8 +100,8 @@ class TestBoard(unittest.TestCase):
     def testListaDePuntajeAndDefCurrentWords(self):
         tablero = Board()
         tablero.initialBoard()
-        tablero.writeHorizontalWord(0, 2, 'ARASAKA')
-        tablero.writeVerticalWord(0, 5, 'SILVERHAND')
+        tablero.writeInBoard(0, 2, 'H','ARASAKA')
+        tablero.writeInBoard(0, 5, 'V','SILVERHAND')
         self.assertEqual((tablero.board),[
     ['0','*','A','R','A','S','A','K','A','*','*','4','*','*','0'],
     ['*','1','*','*','*','I','*','*','*','5','*','*','*','1','*'],
@@ -123,14 +124,14 @@ class TestBoard(unittest.TestCase):
     def testListaDePuntajeAndDefCurrentWordsHorizontal(self):
         tablero = Board()
         tablero.initialBoard()
-        tablero.writeHorizontalWord(5, 0, 'CAFE')
+        tablero.writeInBoard(5, 0, 'H', 'CAFE')
         self.assertEqual((tablero.wordCurrentPoints()), [3, 3, 4, 1])
 
     def testMismaLetraEnHorizontal(self):
         tablero = Board()
         tablero.initialBoard()
-        tablero.writeVerticalWord(0, 5, 'SILVERHAND')
-        tablero.writeHorizontalWord(0, 2, 'ARASAKA')
+        tablero.writeInBoard(0, 5, 'V', 'SILVERHAND')
+        tablero.writeInBoard(0, 2, 'H','ARASAKA')
         self.assertEqual((tablero.board),[
     ['0','*','A','R','A','S','A','K','A','*','*','4','*','*','0'],
     ['*','1','*','*','*','I','*','*','*','5','*','*','*','1','*'],
@@ -148,6 +149,10 @@ class TestBoard(unittest.TestCase):
     ['*','1','*','*','*','5','*','*','*','5','*','*','*','1','*'],
     ['0','*','*','4','*','*','*','0','*','*','*','4','*','*','0'],
 ])
+        
+
+
+
 
 if __name__ == '__main__':
     unittest.main()
