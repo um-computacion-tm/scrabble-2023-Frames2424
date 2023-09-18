@@ -33,47 +33,49 @@ class Board:
     def wordCurrentPoints(self):
         return self.wordPoints
     
-    def writeVerticalWord(self, startX, startY, word):
+    def initVariables(self):
         self.wordPoints = []
-        values = BagTiles().tiles
-        for letter in word:
-            if self.board[startX][startY] == '4':
-                self.board[startX][startY] = letter
-                self.wordPoints.append(values[letter] * 2)
-                startX += 1
-            elif self.board[startX][startY] == '5':
-                self.board[startX][startY] = letter
-                self.wordPoints.append(values[letter] * 3)
-                startX += 1
-            elif self.board[startX][startY] == '*'  or (self.board[startX][startY] == '0' or '1' or letter):
-                if self.board[startX][startY] != letter:
-                    self.board[startX][startY] = letter
-                    self.wordPoints.append(values[letter])
-                    startX += 1
-                else:
-                    self.wordPoints.append(values[letter])
-                    startX += 1
+        self.condicionCero = False
+        self.condicionUno = False
 
-    def writeHorizontalWord(self, startX, startY, word):
-        self.wordPoints = []
+    def appendValuesInWordPoints(self, letter, multiplier):
         values = BagTiles().tiles
+        self.wordPoints.append(values[letter] * multiplier)
+    
+    def writeInBoard(self, startX, startY, direction, word):
+        self.initVariables()
         for letter in word:
             if self.board[startX][startY] == '4':
                 self.board[startX][startY] = letter
-                self.wordPoints.append(values[letter] * 2)
-                startY += 1
+                self.appendValuesInWordPoints(letter, 2)
+
             elif self.board[startX][startY] == '5':
                 self.board[startX][startY] = letter
-                self.wordPoints.append(values[letter] * 3)
-                startY += 1
-            elif self.board[startX][startY] == '*'  or (self.board[startX][startY] == '0' or '1' or letter):
+                self.appendValuesInWordPoints(letter, 3)
+
+
+            elif self.board[startX][startY] == '0':
+                self.board[startX][startY] = letter
+                self.appendValuesInWordPoints(letter, 1)
+                self.condicionCero = True
+
+
+            elif self.board[startX][startY] == '1':
+                self.board[startX][startY] = letter
+                self.appendValuesInWordPoints(letter, 1)
+                self.condicionUno = True
+
+            elif self.board[startX][startY] == '*'  or letter:
                 if self.board[startX][startY] != letter:
                     self.board[startX][startY] = letter
-                    self.wordPoints.append(values[letter])
-                    startY += 1
+                    self.appendValuesInWordPoints(letter, 1)
                 else:
-                    self.wordPoints.append(values[letter])
-                    startY += 1
+                    self.appendValuesInWordPoints(letter, 1)
+                    
+            if direction == 'H':
+                startY += 1    
+            if direction == 'V':
+                startX += 1
 
     def verifyVerticalWord(self, palabra):
         for k in range(15):
@@ -92,3 +94,4 @@ class Board:
                 return True
             else:
                 continue
+

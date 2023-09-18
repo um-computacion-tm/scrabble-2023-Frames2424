@@ -11,4 +11,3 @@ class ScrabbleGame:
         for _ in range(players_count):
             self.players.append(Player())
             
-# branch
