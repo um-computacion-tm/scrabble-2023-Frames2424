@@ -17,3 +17,5 @@ Si necesitas más ajustes o cambios específicos en el texto, por favor, házmel
 
 ### Versión 0.0.3 - 13 de septiembre 2023 
 -  Es mi cumpleaños 
+## Versión 0.0.3a - 18 de septiembre 2023 
+-  Se unificaron y optimizaron funciones de game.
