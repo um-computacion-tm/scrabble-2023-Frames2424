@@ -19,3 +19,6 @@ Si necesitas más ajustes o cambios específicos en el texto, por favor, házmel
 -  Es mi cumpleaños 
 ## Versión 0.0.3a - 18 de septiembre 2023 
 -  Se unificaron y optimizaron funciones de game.
+
+## Versión 0.0.4 - 25 septiembre 2023 
+- Es posible calcular el puntaje individual de cada palabra. 
