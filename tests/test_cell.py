@@ -1,53 +1,55 @@
 import unittest
 from game.cell import Cell
 from game.models import Tile
+from game.board import Board
 
 
 class TestCell(unittest.TestCase):
-    def test_init(self):
-        cell = Cell(multiplier=2, multiplier_type='letter')
+    def testHorizontalPuntaje(self):
+        tablero = Board()
+        tablero.initialBoard()
+        tablero.writeInBoard(0, 2, 'V', 'ARASAKA')
+        self.assertEqual(tablero.returnPointsAndMultiplier(), 30)
 
-        self.assertEqual(
-            cell.multiplier,
-            2,
-        )
-        self.assertEqual(
-            cell.multiplier_type,
-            'letter',
-        )
-        self.assertIsNone(cell.letter)
-        self.assertEqual(
-            cell.calculate_value(),
-            0,
-        )
+    def testHorizontalPuntaje2(self):
+        tablero = Board()
+        tablero.initialBoard()
+        tablero.writeInBoard(5, 0, 'H', 'CAFE')
+        self.assertEqual((tablero.wordCurrentPoints()), [3, 3, 4, 1])
+        self.assertEqual((tablero.returnPointsAndMultiplier()), 11)
 
-    def test_add_letter(self):
-        cell = Cell(multiplier=1, multiplier_type='')
-        letter = Tile(letter='p', value=3)
+    def testHorizontalPuntaje2(self):
+        tablero = Board()
+        tablero.initialBoard()
+        tablero.writeInBoard(3, 2, 'H', 'SALVARAN')
+        self.assertEqual((tablero.returnPointsAndMultiplier()), 36)
 
-        cell.add_letter(letter=letter)
 
-        self.assertEqual(cell.letter, letter)
+    def testVerticalPuntaje(self):
+        tablero = Board()
+        tablero.initialBoard()
+        tablero.writeInBoard(0, 2, 'H', 'ARASAKA')
+        self.assertEqual(tablero.returnPointsAndMultiplier(), 20)
+        
+    def testVerticalPuntaje2(self):
+        tablero = Board()
+        tablero.initialBoard()
+        tablero.writeInBoard(0, 5, 'V', 'SILVERHAND')
+        self.assertEqual(tablero.returnPointsAndMultiplier(), 25)
 
-    def test_cell_value(self):
-        cell = Cell(multiplier=2, multiplier_type='letter')
-        letter = Tile(letter='p', value=3)
-        cell.add_letter(letter=letter)
+    def testVerticalPuntaje3(self): 
+        tablero = Board()
+        tablero.initialBoard()
+        tablero.writeInBoard(0, 0, 'V', 'TOKYO')
+        self.assertEqual(tablero.returnPointsAndMultiplier(), 28)
 
-        self.assertEqual(
-            cell.calculate_value(),
-            6,
-        )
-
-    def test_cell_multiplier_word(self):
-        cell = Cell(multiplier=2, multiplier_type='word')
-        letter = Tile(letter='p', value=3)
-        cell.add_letter(letter=letter)
-
-        self.assertEqual(
-            cell.calculate_value(),
-            3,
-        )
+    def testVerticalAndHorizontal(self): 
+        tablero = Board()
+        tablero.initialBoard()
+        tablero.writeInBoard(0, 2, 'V', 'ARASAKA')
+        self.assertEqual(tablero.returnPointsAndMultiplier(), 30)
+        tablero.writeInBoard(0, 2, 'H', 'ARASAKA')
+        self.assertEqual(tablero.returnPointsAndMultiplier(), 20)
 
 
 
