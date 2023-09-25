@@ -5,6 +5,8 @@ class Board:
     def __init__(self):
         self.board = []
         self.wordPoints = []
+        self.condicionCero = False
+        self.condicionUno = False
 
     def initialBoard(self):
         initialBoard = [
@@ -32,7 +34,7 @@ class Board:
     
     def wordCurrentPoints(self):
         return self.wordPoints
-    
+
     def initVariables(self):
         self.wordPoints = []
         self.condicionCero = False
@@ -95,3 +97,14 @@ class Board:
             else:
                 continue
 
+
+    def returnPointsAndMultiplier(self):
+        simple = sum(self.wordPoints)
+        if self.condicionCero == True:
+            return simple * 2
+        
+        if self.condicionUno == True:
+            return simple * 3
+        
+        else: 
+            return simple
