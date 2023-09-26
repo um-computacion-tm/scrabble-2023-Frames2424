@@ -1,24 +1,24 @@
+### Version 0.0.1 - September 12, 2023
+- Initialization of the first version with a history of changes.
+- A new parameter was introduced in the Board class, allowing a list containing the individual values ​​of each letter in a written word to be retrieved.
+- There were changes in the names of two functions of the Board class, using "verify" to indicate that these functions check the existence of the word in the array.
+- Incorporation of three additional functions:
+  1. `wordCurrentPoints`: Returns a list with the individual values ​​of the letters in the last word written in the array.
+  2. `writeVerticalWord`: Allows you to write the selected word vertically into the matrix (verification has not been done yet, which is planned in future updates). This function calculates the value of each box and multiplies the individual letters if they land on a double or triple letter box.
+  3. `writeHorizontalWord`: Makes it possible to write the chosen word horizontally in the matrix (it has not yet been verified, which will be carried out in future updates). This function also calculates the value of each box and multiplies the individual letters if it is in a double or triple letter box.
 
-### Versión 0.0.1 - 12 de septiembre de 2023
-- Inicialización de la primera versión con un historial de cambios.
-- Se introdujo un nuevo parámetro en la clase Board, permitiendo recuperar una lista que contiene los valores individuales de cada letra en una palabra escrita.
-- Hubo cambios en los nombres de dos funciones de la clase Board, empleando "verificar" para indicar que estas funciones comprueban la existencia de la palabra en la matriz.
-- Incorporación de tres funciones adicionales:
-  1. `wordCurrentPoints`: Retorna una lista con los valores individuales de las letras en la última palabra escrita en la matriz.
-  2. `writeVerticalWord`: Permite escribir verticalmente en la matriz la palabra seleccionada (aún no se ha realizado la verificación, lo cual se planifica en futuras actualizaciones). Esta función calcula el valor de cada casilla y multiplica las letras individuales en caso de caer en una casilla de doble o triple letra.
-  3. `writeHorizontalWord`: Posibilita escribir horizontalmente en la matriz la palabra elegida (aún no se ha verificado, lo cual se llevará a cabo en futuras actualizaciones). Esta función también calcula el valor de cada casilla y multiplica las letras individuales si se encuentra en una casilla de doble o triple letra.
+### Version 0.0.2 - September 12, 2023
+- A modification was made to the structure of the Tiles values; They were previously presented as a list and have now been replaced by a dictionary to make their individual values ​​easier to access.
+- The letter K was added to the letter bag to expand the possible combinations.
+- Made adjustments to testing along with features, removing some testing that no longer aligns with the planned approach to game development.
 
-### Versión 0.0.2 - 12 de septiembre de 2023
-- Se efectuó una modificación en la estructura de los valores de las Tiles; antes se presentaban como una lista y ahora se han reemplazado por un diccionario para facilitar el acceso a sus valores individuales.
-- La letra K se incorporó a la bolsa de letras para ampliar las posibles combinaciones.
-- Se realizaron ajustes en las pruebas junto con las funciones, eliminando algunas pruebas que ya no se alinean con el enfoque planeado para el desarrollo del juego.
+If you need further adjustments or specific changes to the text, please let me know.
 
-Si necesitas más ajustes o cambios específicos en el texto, por favor, házmelo saber.
+### Version 0.0.3 - September 13, 2023
+- It's my birthday
 
-### Versión 0.0.3 - 13 de septiembre 2023 
--  Es mi cumpleaños 
-## Versión 0.0.3a - 18 de septiembre 2023 
--  Se unificaron y optimizaron funciones de game.
+## Version 0.0.3a - September 18, 2023
+- Game features have been unified and improved.
 
-## Versión 0.0.4 - 25 septiembre 2023 
-- Es posible calcular el puntaje individual de cada palabra. 
+## Version 0.0.4 - September 25, 2023
+- It is possible to calculate the individual score of each word.
