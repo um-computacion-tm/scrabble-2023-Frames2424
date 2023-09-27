@@ -8,47 +8,47 @@ class TestCell(unittest.TestCase):
     def testHorizontalPuntaje(self):
         tablero = Board()
         tablero.initialBoard()
-        tablero.writeInBoard(0, 2, 'V', 'ARASAKA')
+        tablero.writeInBoard(0, 2, 'V', 'TORNADO')  #Tornado devuelve 8
         self.assertEqual(tablero.returnPointsAndMultiplier(), 30)
 
     def testHorizontalPuntaje2(self):
         tablero = Board()
         tablero.initialBoard()
-        tablero.writeInBoard(5, 0, 'H', 'CAFE')
+        tablero.writeInBoard(5, 0, 'H', 'PISO') #Piso devuelve 6
         self.assertEqual((tablero.wordCurrentPoints()), [3, 3, 4, 1])
         self.assertEqual((tablero.returnPointsAndMultiplier()), 11)
 
     def testHorizontalPuntaje2(self):
         tablero = Board()
         tablero.initialBoard()
-        tablero.writeInBoard(3, 2, 'H', 'SALVARAN')
+        tablero.writeInBoard(3, 2, 'H', 'SALVAJES') #20
         self.assertEqual((tablero.returnPointsAndMultiplier()), 36)
 
 
     def testVerticalPuntaje(self):
         tablero = Board()
         tablero.initialBoard()
-        tablero.writeInBoard(0, 2, 'H', 'ARASAKA')
+        tablero.writeInBoard(0, 2, 'H', 'TORNADO')
         self.assertEqual(tablero.returnPointsAndMultiplier(), 20)
         
     def testVerticalPuntaje2(self):
         tablero = Board()
         tablero.initialBoard()
-        tablero.writeInBoard(0, 5, 'V', 'SILVERHAND')
+        tablero.writeInBoard(0, 5, 'V', 'NXLTORNADO') #18 en total
         self.assertEqual(tablero.returnPointsAndMultiplier(), 25)
 
     def testVerticalPuntaje3(self): 
         tablero = Board()
         tablero.initialBoard()
-        tablero.writeInBoard(0, 0, 'V', 'TOKYO')
+        tablero.writeInBoard(0, 0, 'V', 'HONDA') #9
         self.assertEqual(tablero.returnPointsAndMultiplier(), 28)
 
     def testVerticalAndHorizontal(self): 
         tablero = Board()
         tablero.initialBoard()
-        tablero.writeInBoard(0, 2, 'V', 'ARASAKA')
+        tablero.writeInBoard(0, 2, 'V', 'TORNADO')
         self.assertEqual(tablero.returnPointsAndMultiplier(), 30)
-        tablero.writeInBoard(0, 2, 'H', 'ARASAKA')
+        tablero.writeInBoard(0, 2, 'H', 'TORNADO')
         self.assertEqual(tablero.returnPointsAndMultiplier(), 20)
 
 
