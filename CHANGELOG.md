@@ -22,3 +22,7 @@ If you need further adjustments or specific changes to the text, please let me k
 
 ## Version 0.0.4 - September 25, 2023
 - It is possible to calculate the individual score of each word.
+
+## Version 0.1.0 - October 1, 2023
+- Funcition cell has been optimized, basics functions was refactored reducing problemns and complexity.
+
