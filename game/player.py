@@ -8,7 +8,7 @@ class Player:
         self.score = 0
     
     
-    def has_letters_str(self, tiles_group, match): 
+    def letters_str(self, tiles_group, match): 
         tiles_group = tiles_group.upper()
         for i in self.tiles:
             if i.letter in match:
@@ -23,7 +23,7 @@ class Player:
             
         return True   
     
-    def has_letters_tile(self, tiles_group, match):
+    def letters_tile(self, tiles_group, match):
         for i in self.tiles:
             if i.letter in match:
                 match[i.letter] += 1
@@ -37,12 +37,12 @@ class Player:
             
         return True
     
-    def has_letters(self, tiles_group):
+    def letters(self, tiles_group):
         match = {}    
         if isinstance(tiles_group, str):    
-            return self.has_letters_str(tiles_group, match)      
+            return self.letters_str(tiles_group, match)      
         else:       
-            return self.has_letters_tile(tiles_group, match)
+            return self.letters_tile(tiles_group, match)
     
     def exchange_tile(self, bag:BagTiles, tile_exchange):
         for i in range(len(self.tiles)):
